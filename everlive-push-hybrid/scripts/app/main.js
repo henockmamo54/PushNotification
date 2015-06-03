@@ -1,11 +1,11 @@
 // This is your Telerik Backend Services API key.
-var bsApiKey = 'BACKEND_SERVICES_API_KEY';
+var bsApiKey = 'Elc7scId8SrpwCEx';
 
 // This is the scheme (http or https) to use for accessing the Telerik Backend Services REST API.
 var bsScheme = 'http';
 
 // This is your Google Cloud Console API project number. It is required by Google in order to enable push notifications for your Android. You do not need it for iOS.
-var googleApiProjectNumber = 'GOOGLE_API_PROJECT_NUMBER';
+var googleApiProjectNumber = '1019152990790';
 
 var app = (function () {
     'use strict';
@@ -24,6 +24,15 @@ var app = (function () {
             $("#messageParagraph").html("Missing Google API Project Number!<br /><br />It appears that you have not filled in your Google API project number. It is required for push notifications on Android.<br/><br/>Please go to scripts/app/main.js and enter your Google API project number at the beginning of the file.");
             $("#registerButton").hide();
         }
+        el.push.notifications.create({ Message:'Hcmis BackEnd Notification X Hub is Offline' },
+                    function(data){
+                        alert(JSON.stringify(data) +'on device ready' );
+                    },
+                    function(error){
+                        alert(JSON.stringify(error));
+            alert(JSON.stringify(error) +'on device ready');
+                    }
+                );
     };
 
     document.addEventListener("deviceready", onDeviceReady, false);
